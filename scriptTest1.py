@@ -4,7 +4,7 @@ from time import sleep
 import numpy as NP
 
 #video-settings
-Fps = 60 #Fps 
+Fps = 80 #Fps 
 offset = 5 #Margem de erro
 #video-contagem
 linha_p = 550 #Posicao
@@ -39,6 +39,7 @@ while True:
     matriz = cv.getStructuringElement(cv.MORPH_ELLIPSE, (5, 5))
     #criando matriz
     imgfinal = cv.morphologyEx (dilatar, cv.MORPH_CLOSE, matriz)
+    imgfinal = cv.morphologyEx (imgfinal, cv.MORPH_CLOSE, matriz)
     imgfinal = cv.morphologyEx (imgfinal, cv.MORPH_CLOSE, matriz)
     #ajuste final
 
