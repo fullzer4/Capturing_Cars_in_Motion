@@ -4,12 +4,12 @@ from time import sleep
 import numpy as NP
 
 #video-settings
-Fps = 20 #Fps (testar) (resultadoBom = 80 e 20)
+Fps = 20 #Fps (testar) (resultadoBom = 80 e 20) (20 mais lento, 80 mais rapido)
 offset = 6 #Margem de erro OK
 #video-contagem
 linha_p = 525 #Posicao OK
-largura = 45 #Valor minimo (testar) (resultadoBom = 65)
-altura = 45 #Valor minimo (testar) (resultadoBom = 65)
+largura = 45 #Valor minimo (testar) (resultadoBom = 45)
+altura = 45 #Valor minimo (testar) (resultadoBom = 45)
 Detectar = [] #Array OK 
 Carros = 0 #Contagem OK
 
