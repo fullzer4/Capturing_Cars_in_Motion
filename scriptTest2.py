@@ -34,7 +34,7 @@ while True:
     sleep(ajuste)
     #ajustar processamento
     cinza = cv.cvtColor(frame1,cv.COLOR_BGR2GRAY)
-    blur = cv.GaussianBlur(cinza,(3,3),5)
+    blur = cv.GaussianBlur(cinza,(3,3),2) #5
     subVideo = sub.apply(blur)
     dilatar = cv.dilate(subVideo, NP.ones((5,5)))
     #tirando imperfeições
