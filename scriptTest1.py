@@ -75,4 +75,5 @@ while True:
 
 cv.destroyAllWindows()
 cap.release()
+print("Total de carros em media: " +(Carros)+ " pode haver pequenos erros na contagem")
 #Final
