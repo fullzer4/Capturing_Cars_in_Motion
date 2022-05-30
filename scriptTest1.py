@@ -7,9 +7,9 @@ import numpy as NP
 Fps = 20 #Fps (testar) (resultadoBom = 80 e 20)
 offset = 6 #Margem de erro OK
 #video-contagem
-linha_p = 536 #Posicao OK
-largura = 65 #Valor minimo (testar) (resultadoBom = 65)
-altura = 65 #Valor minimo (testar) (resultadoBom = 65)
+linha_p = 525 #Posicao OK
+largura = 45 #Valor minimo (testar) (resultadoBom = 65)
+altura = 45 #Valor minimo (testar) (resultadoBom = 65)
 Detectar = [] #Array OK 
 Carros = 0 #Contagem OK
 
@@ -39,7 +39,6 @@ while True:
     matriz = cv.getStructuringElement(cv.MORPH_ELLIPSE, (5, 5))
     #criando matriz
     imgfinal = cv.morphologyEx (dilatar, cv.MORPH_CLOSE, matriz)
-    imgfinal = cv.morphologyEx (imgfinal, cv.MORPH_CLOSE, matriz)
     #ajuste final
 
     contorno,a = cv.findContours(imgfinal, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
