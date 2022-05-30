@@ -12,6 +12,7 @@ largura = 45 #Valor minimo (testar) (resultadoBom = 65)
 altura = 45 #Valor minimo (testar) (resultadoBom = 65)
 Detectar = [] #Array OK 
 Carros = 0 #Contagem OK
+#temporizador
 
 def centro(x,y,l,a):
     xC = int(l / 2)
@@ -19,6 +20,7 @@ def centro(x,y,l,a):
     totalxC = x + xC
     totalyC = y + yC
     return totalxC, totalyC
+#função centro
 
 #video input
 cap = cv.VideoCapture("video.mp4")
