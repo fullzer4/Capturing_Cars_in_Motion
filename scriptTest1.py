@@ -4,14 +4,14 @@ from time import sleep
 import numpy as NP
 
 #video-settings
-Fps = 80 #Fps 
-offset = 5 #Margem de erro
+Fps = 20 #Fps (testar) (resultadoBom = 80 e 20)
+offset = 6 #Margem de erro OK
 #video-contagem
-linha_p = 550 #Posicao
-largura = 80 #Valor minimo
-altura = 80 #Valor minimo
-Detectar = [] #Array
-Carros = 0 #Contagem
+linha_p = 536 #Posicao OK
+largura = 65 #Valor minimo (testar) (resultadoBom = 65)
+altura = 65 #Valor minimo (testar) (resultadoBom = 65)
+Detectar = [] #Array OK 
+Carros = 0 #Contagem OK
 
 def centro(x,y,l,a):
     xC = int(l / 2)
@@ -40,7 +40,6 @@ while True:
     #criando matriz
     imgfinal = cv.morphologyEx (dilatar, cv.MORPH_CLOSE, matriz)
     imgfinal = cv.morphologyEx (imgfinal, cv.MORPH_CLOSE, matriz)
-    imgfinal = cv.morphologyEx (imgfinal, cv.MORPH_CLOSE, matriz)
     #ajuste final
 
     contorno,a = cv.findContours(imgfinal, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
@@ -60,11 +59,11 @@ while True:
     #detectar os carros e colocar boxes e meio(com circulo)
 
         for (x,y) in Detectar:
-            if y <(offset+linha_p) and y>(offset-linha_p):
-                Carros+=1
-                print("Carros: "+ str(Carros))
-                cv.line(frame1, (25, linha_p), (1200, linha_p), (0,128,0), 3)
-                Detectar.remove((x,y))
+            if (linha_p + offset) > y > (linha_p - offset):
+                Carros += 1
+                cv.line(frame1, (25, linha_p), (1200, linha_p), (0, 127, 255), 3)
+                Detectar.remove((x, y))
+                print("Carros detectados: " + str(Carros))
     #Passou da linha (verificação)
     
     cv.imshow("Video",frame1)

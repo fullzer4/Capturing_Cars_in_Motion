@@ -1,0 +1,8 @@
+Fps = 20 #Fps (testar) (resultadoBom = 80 e 20)
+offset = 6 #Margem de erro OK
+#video-contagem
+linha_p = 536 #Posicao OK
+largura = 65 #Valor minimo (testar) (resultadoBom = 65)
+altura = 65 #Valor minimo (testar) (resultadoBom = 65)
+Detectar = [] #Array OK 
+Carros = 0 #Contagem OK
