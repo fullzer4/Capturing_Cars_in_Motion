@@ -4,8 +4,8 @@ from time import sleep
 import numpy as NP
 
 #video-settings
-Fps = 80 #Fps (testar) (melhor = 80)
-offset = 6 #Margem de erro O(testar) (melhor = 6)
+Fps = 100 #Fps (testar) (melhor = 80)
+offset = 5 #Margem de erro O(testar) (melhor = 6)
 #video-contagem
 linha_p = 500 #Posicao OK (melhor = 500)
 largura = 35 #Valor minimo (testar) (resultadoBom = 35)
@@ -33,15 +33,13 @@ while True:
     sleep(ajuste)
     #ajustar processamento
     cinza = cv.cvtColor(frame1,cv.COLOR_BGR2GRAY)
-    blur = cv.GaussianBlur(cinza,(3,3),3) #5
+    blur = cv.GaussianBlur(cinza,(3,3),5) #5
     subVideo = sub.apply(blur)
-    dilatar = cv.dilate(subVideo, NP.ones((6,6)))
+    dilatar = cv.dilate(subVideo, NP.ones((5,5)))
     #tirando imperfeições
-    matriz = cv.getStructuringElement(cv.MORPH_ELLIPSE, (6, 6))
+    matriz = cv.getStructuringElement(cv.MORPH_ELLIPSE, (5, 5))
     #criando matriz
     imgfinal = cv.morphologyEx (dilatar, cv.MORPH_CLOSE, matriz)
-    imgfinal = cv.morphologyEx (imgfinal, cv.MORPH_CLOSE, matriz)
-    imgfinal = cv.morphologyEx (imgfinal, cv.MORPH_CLOSE, matriz)
     #ajuste final
 
     contorno,a = cv.findContours(imgfinal, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
@@ -57,7 +55,7 @@ while True:
         cv.rectangle(frame1, (x,y), (x+l, y+a),(255,203,219), 2)
         Fcentro = centro(x,y,l,a)
         Detectar.append(Fcentro)
-        cv.circle(frame1, Fcentro, 6, (153, 51, 153), -1)
+        cv.circle(frame1, Fcentro, 4, (153, 51, 153), -1)
     #detectar os carros e colocar boxes e meio(com circulo)
 
         for (x,y) in Detectar:
