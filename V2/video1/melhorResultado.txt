@@ -9,10 +9,4 @@ Carros = 0 #Contagem OK
 
 matizsaturacao ou alterar blur
 
-erro depois de 229 Carros
-Traceback (most recent call last):
-  File "/home/fullzer4/Documents/GitHub/Capturing_Cars_in_Motion/scriptTest2.py", line 34, in <module>
-    cinza = cv.cvtColor(frame1,cv.COLOR_BGR2GRAY)
-cv2.error: OpenCV(4.5.4) ./modules/imgproc/src/color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cvtColor'
-
 resultado final: 229
