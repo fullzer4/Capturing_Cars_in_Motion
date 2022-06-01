@@ -4,12 +4,12 @@ from time import sleep
 import numpy as NP
 
 #video-settings
-Fps = 100 #Fps (testar) (melhor = 80)
-offset = 5 #Margem de erro O(testar) (melhor = 6)
+Fps = 60 #Fps (60fps)
+offset = 6 #Margem de erro OK
 #video-contagem
-linha_p = 500 #Posicao OK (melhor = 500)
-largura = 35 #Valor minimo (testar) (resultadoBom = 35)
-altura = 35 #Valor minimo (testar) (resultadoBom = 35)
+linha_p = 525 #Posicao OK
+largura = 45 #Valor minimo (testar) (resultadoBom = 45)
+altura = 45 #Valor minimo (testar) (resultadoBom = 45)
 Detectar = [] #Array OK 
 Carros = 0 #Contagem OK
 
@@ -33,7 +33,7 @@ while True:
     sleep(ajuste)
     #ajustar processamento
     cinza = cv.cvtColor(frame1,cv.COLOR_BGR2GRAY)
-    blur = cv.GaussianBlur(cinza,(3,3),5) #5
+    blur = cv.GaussianBlur(cinza,(3,3),2) #5
     subVideo = sub.apply(blur)
     dilatar = cv.dilate(subVideo, NP.ones((5,5)))
     #tirando imperfeições
@@ -44,7 +44,7 @@ while True:
 
     contorno,a = cv.findContours(imgfinal, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
     #achar contornos
-    cv.line(frame1, (25, linha_p), (1200, linha_p), (255,255,255), 2)
+    cv.line(frame1, (25, linha_p), (1200, linha_p), (255,255,255), 3)
     #criar linha
     for(i, Autoc) in enumerate(contorno):
         (x,y,l,a) = cv.boundingRect(Autoc)
@@ -61,7 +61,7 @@ while True:
         for (x,y) in Detectar:
             if (linha_p + offset) > y > (linha_p - offset):
                 Carros += 1
-                cv.line(frame1, (25, linha_p), (1200, linha_p), (0, 127, 255), 2)
+                cv.line(frame1, (25, linha_p), (1200, linha_p), (0, 127, 255), 3)
                 Detectar.remove((x, y))
                 print("Carros detectados: " + str(Carros))
     #Passou da linha (verificação)
