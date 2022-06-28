@@ -75,6 +75,7 @@ while True:
     #sair (Esc)
 
 cv.destroyAllWindows()
+#sair das paginas
 cap.release()
 print("Total de carros em media: " +str(Carros)+ " pode haver pequenos erros na contagem")
 print("Importante: se voce nao deixar ele finalizar a contagem, a contagem total vai ser o numero total ate o pause")
