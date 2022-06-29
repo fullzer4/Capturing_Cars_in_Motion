@@ -4,12 +4,12 @@ from time import sleep
 import numpy as NP
 
 #video-settings
-Fps = 20 #Fps (testar) (resultadoBom = 80 e 20) (20 mais lento, 80 mais rapido)
-offset = 6 #Margem de erro OK
+Fps = 120 #Fps (testar) (resultadoBom = 80 e 20) (20 mais lento, 80 mais rapido)
+offset = 5 #Margem de erro OK
 #video-contagem
 linha_p = 525 #Posicao OK
-largura = 45 #Valor minimo (testar) (resultadoBom = 45)
-altura = 45 #Valor minimo (testar) (resultadoBom = 45)
+largura = 65 #Valor minimo (testar) (resultadoBom = 45)
+altura = 55 #Valor minimo (testar) (resultadoBom = 45)
 Detectar = [] #Array OK 
 Carros = 0 #Contagem OK
 
@@ -33,11 +33,13 @@ while True:
     sleep(ajuste)
     #ajustar processamento
     cinza = cv.cvtColor(frame1,cv.COLOR_BGR2GRAY)
-    blur = cv.GaussianBlur(cinza,(3,3),5) #5
+    blur = cv.GaussianBlur(cinza,(3,3),1) #5
+    subVideo = sub.apply(blur)
+    subVideo = sub.apply(blur)
     subVideo = sub.apply(blur)
     dilatar = cv.dilate(subVideo, NP.ones((5,5)))
     #tirando imperfeições
-    matriz = cv.getStructuringElement(cv.MORPH_ELLIPSE, (6, 6)) #5, 5
+    matriz = cv.getStructuringElement(cv.MORPH_ELLIPSE, (5, 5)) #5, 5
     #criando matriz
     imgfinal = cv.morphologyEx (dilatar, cv.MORPH_CLOSE, matriz)
     #ajuste final
@@ -61,7 +63,7 @@ while True:
         for (x,y) in Detectar:
             if (linha_p + offset) > y > (linha_p - offset):
                 Carros += 1
-                cv.line(frame1, (25, linha_p), (1200, linha_p), (0, 127, 255), 3)
+                cv.line(frame1, (25, linha_p), (1200, linha_p), (0, 127, 255), 1)
                 Detectar.remove((x, y))
                 print("Carros detectados: " + str(Carros))
     #Passou da linha (verificação)

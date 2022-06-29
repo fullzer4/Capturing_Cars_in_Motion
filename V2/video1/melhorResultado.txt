@@ -9,12 +9,30 @@ Carros = 0 #Contagem OK
 
 matizsaturacao ou alterar blur
 
+testes feitos com: fps 20
+
 primeiro teste: 230 blur 3 78,306878306878% de acerto 78,30%
 segundo teste: 229 blur 5 78,835978835979% de acerto 78,83%
 terceiro teste: 229 blur 10 78,835978835979% de acerto 78,83%
 quarto teste: 229 blur 5 com 2 preenchimentos 78,835978835979% de acerto 78,83%
-quinto teste: 240 blur 5 com 1 preenchimento 6,6 matriz 
-sexto teste:  blur 5 com 1 preenchimento 4,4 matriz (a fazer)
+quinto teste: 240 blur 5 com 1 preenchimento 6,6 matriz  66,666666666% de acerto 66,66%
 
-total: 189
+testes feitos com fps  60
+
+sexto teste: 234 blur 5 com 1 preenchimento 3,3 matriz 76.1904761905% de acerto 76.19%
+
+testes feitos com fps  120
+
+setimo teste: 234 blur 5 com 2 preenchimento 3,3 matriz 76.1904761905% de acerto 76.19%
+oitavo teste: 234 blur 10 com 2 preenchimento 3,3 matriz grossura da linha 3 76.1904761905% de acerto 76.19%
+nono teste: 233 blur 5 com 2 preenchimentos 4,4 matriz grossura da linha 2 
+decimo teste: 229 blur 5 com 2 preenchimentos 5,5 matriz grossura da linha 1 78,835978835979% de acerto 78,83%
+decimo primerio teste: 224 blur 5 com 2 preenchimentos 5,5 matriz grossura da linha 1 altura_min 50  largura_min 50
+decimo segundo teste: 221 blur 5 com 2 preenchimentos 5,5 matriz grossura da linha 1 altura_min 55  largura_min 55
+decimo terceiro teste: 220 blur 5 com 2 preenchimentos 5,5 matriz grossura da linha 1 altura_min 55  largura_min 60
+decimo quarto teste: 219 blur 5 com 2 preenchimentos 5,5 matriz grossura da linha 1 altura_min 55  largura_min 65 84.126984127% de acerto 84.12%
+decimo quinto teste: 224 blur 10 com 2 preenchimentos, 2 dilatações 2 blur 5,5 matriz grossura da linha 1 altura_min 55  largura_min 65
+decimo quinto teste: 185 blur 10 com 1 preenchimentos, 1 dilatações 3 blur 5,5 matriz grossura da linha 1 altura_min 55  largura_min 65 offset 5 
+
+total: 189 (revisar)
 tempo de video: 3m
