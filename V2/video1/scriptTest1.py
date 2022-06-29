@@ -33,11 +33,11 @@ while True:
     sleep(ajuste)
     #ajustar processamento
     cinza = cv.cvtColor(frame1,cv.COLOR_BGR2GRAY)
-    blur = cv.GaussianBlur(cinza,(3,3),2) #5
+    blur = cv.GaussianBlur(cinza,(3,3),5) #5
     subVideo = sub.apply(blur)
     dilatar = cv.dilate(subVideo, NP.ones((5,5)))
     #tirando imperfeições
-    matriz = cv.getStructuringElement(cv.MORPH_ELLIPSE, (5, 5))
+    matriz = cv.getStructuringElement(cv.MORPH_ELLIPSE, (6, 6)) #5, 5
     #criando matriz
     imgfinal = cv.morphologyEx (dilatar, cv.MORPH_CLOSE, matriz)
     #ajuste final

@@ -9,4 +9,12 @@ Carros = 0 #Contagem OK
 
 matizsaturacao ou alterar blur
 
-resultado final: 229
+primeiro teste: 230 blur 3 78,306878306878% de acerto 78,30%
+segundo teste: 229 blur 5 78,835978835979% de acerto 78,83%
+terceiro teste: 229 blur 10 78,835978835979% de acerto 78,83%
+quarto teste: 229 blur 5 com 2 preenchimentos 78,835978835979% de acerto 78,83%
+quinto teste: 240 blur 5 com 1 preenchimento 6,6 matriz 
+sexto teste:  blur 5 com 1 preenchimento 4,4 matriz (a fazer)
+
+total: 189
+tempo de video: 3m
