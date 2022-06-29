@@ -1,14 +1,3 @@
-Fps = 20 #Fps (testar) (resultadoBom = 80 e 20)
-offset = 6 #Margem de erro OK
-#video-contagem
-linha_p = 525 #Posicao OK
-largura = 45 #Valor minimo (testar) (resultadoBom = 65)
-altura = 45 #Valor minimo (testar) (resultadoBom = 65)
-Detectar = [] #Array OK 
-Carros = 0 #Contagem OK
-
-matizsaturacao ou alterar blur
-
 testes feitos com: fps 20
 
 primeiro teste: 230 blur 3 78,306878306878% de acerto 78,30%
@@ -32,7 +21,9 @@ decimo segundo teste: 221 blur 5 com 2 preenchimentos 5,5 matriz grossura da lin
 decimo terceiro teste: 220 blur 5 com 2 preenchimentos 5,5 matriz grossura da linha 1 altura_min 55  largura_min 60
 decimo quarto teste: 219 blur 5 com 2 preenchimentos 5,5 matriz grossura da linha 1 altura_min 55  largura_min 65 84.126984127% de acerto 84.12%
 decimo quinto teste: 224 blur 10 com 2 preenchimentos, 2 dilatações 2 blur 5,5 matriz grossura da linha 1 altura_min 55  largura_min 65
-decimo quinto teste: 185 blur 10 com 1 preenchimentos, 1 dilatações 3 blur 5,5 matriz grossura da linha 1 altura_min 55  largura_min 65 offset 5 
+decimo quinto teste: 185 blur 10 com 1 preenchimentos, 1 dilatações 3 blur 5,5 matriz grossura da linha 1 altura_min 55  largura_min 65 offset 5 97.8378378378 de acerto
+
+melhor resultado: 97.83%
 
 total: 189 (revisar)
 tempo de video: 3m
