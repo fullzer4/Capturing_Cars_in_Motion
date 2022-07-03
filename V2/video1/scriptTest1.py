@@ -4,7 +4,7 @@ from time import sleep
 import numpy as NP
 
 #video-settings
-Fps = 120 #Fps (testar) (resultadoBom = 80 e 20) (20 mais lento, 80 mais rapido)
+Fps = 800 #Fps (testar) (resultadoBom = 120) (20 mais lento, 80 mais rapido)
 offset = 5 #Margem de erro OK
 #video-contagem
 linha_p = 525 #Posicao OK
